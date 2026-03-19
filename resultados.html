@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VocatiTest - Resultados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+      <!-- Botón para abrir menú -->
+<button class="menu-toggle" id="menuToggle">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+
+    <img src="images/logo1.png" class="logo-top" alt="Logo Superior">
+
+    <nav class="menu">
+         <a href="index.html" class="menu-inicio">Inicio</a>
+        <div class="dropdown">
+            <button class="dropbtn">Carreras</button>
+            <div class="dropdown-content">
+                <a href="#">Ingeniería</a>
+                <a href="#">Administración</a>
+                <a href="#">Ambiental</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Información</button>
+            <div class="dropdown-content">
+                <a href="#">¿Qué es VocatiTest?</a>
+                <a href="#">Cómo funciona</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Más</button>
+            <div class="dropdown-content">
+                <a href="#">Contacto</a>
+                <a href="#">Ayuda</a>
+            </div>
+        </div>
+    </nav>
+
+    <img src="images/logo2.png" class="logo-bottom" alt="Logo Inferior">
+
+</div>
+
+    <div class="container" style="max-width: 700px;">
+        <h1>¡Resultados Listos!</h1>
+        <p>Basado en tus respuestas, este es tu perfil profesional ideal:</p>
+
+        <div class="resultado-principal" id="resultadoPrincipal"></div>
+        <div class="ranking-secundario" id="rankingSecundario"></div>
+
+        <hr style="margin: 2rem 0;">
+        <a href="registro.html" class="btn btn-reiniciar">Volver a realizar el test</a>
+    </div>
+
+    <script>
+        const respuestas = JSON.parse(localStorage.getItem('respuestas') || '[]');
+        const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
+
+        // Definir perfiles ficticios por rango de preguntas
+        const perfiles = [
+            { nombre: "Ingeniería en Gestión Empresarial", indices: [0,1,2,3,4] },
+            { nombre: "Ingeniería Electromecánica", indices: [5,6,7,8,9] },
+            { nombre: "Ingeniería en Sistemas Computacionales", indices: [10,11,12,13,14] },
+            { nombre: "Ingeniería Electrónica", indices: [15,16,17,18,19] },
+            { nombre: "Ingeniería Ambiental", indices: [20,21,22,23,24] },
+            { nombre: "Ingeniería Industrial", indices: [25,26,27,28,29] },
+            { nombre: "Ingeniería Química", indices: [30,31,32,33,34] },
+            { nombre: "Licenciatura en Administración", indices: [35,36,37,38,39] },
+            { nombre: "Ingeniería en Inteligencia Artificial", indices: [40,41,42,43,44] },
+            { nombre: "Ingeniería en Desarrollo de Aplicaciones", indices: [45,46,47,48,49] },
+        ];
+
+        // Calcular puntaje por perfil
+        perfiles.forEach(p => {
+            p.puntaje = p.indices.reduce((acc, i) => acc + (respuestas[i] ? 1 : 0), 0);
+        });
+
+        // Ordenar por puntaje
+        perfiles.sort((a,b)=> b.puntaje - a.puntaje);
+
+        // Mostrar resultado principal
+        const principal = perfiles[0];
+        document.getElementById('resultadoPrincipal').innerHTML = `
+            <span class="medalla">🥇</span>
+            <h2>${principal.nombre}</h2>
+            <p>Hola ${usuario.nombre || 'Usuario'}, tu afinidad con este área es alta según tus respuestas.</p>
+        `;
+
+        // Mostrar ranking secundario
+        const ranking = perfiles.slice(1,3);
+        const rankingDiv = document.getElementById('rankingSecundario');
+        ranking.forEach((p, i)=>{
+            const div = document.createElement('div');
+            div.className = 'card-secundaria';
+            div.innerHTML = `<span>${i===0?'🥈':'🥉'}</span><h4>${p.nombre}</h4>`;
+            rankingDiv.appendChild(div);
+        });
+    </script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+});
+
+document.querySelectorAll(".dropbtn").forEach(button => {
+    button.addEventListener("click", function() {
+        this.parentElement.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>

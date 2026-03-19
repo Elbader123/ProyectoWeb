@@ -1,0 +1,251 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url("images/fondo4.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* CONTENEDOR */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    margin-top: 100px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* TEXTOS */
+h1 { 
+    color: #2c3e50; 
+    margin-bottom: 1rem; 
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+p { 
+    color: #7f8c8d; 
+    margin-bottom: 2rem; 
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* BOTONES */
+.btn {
+    display: block;
+    width: 100%;
+    background-color: #4b6cb7;
+    color: white;
+    padding: 0.9rem;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn:hover { background-color: #182848; }
+
+/* INPUTS */
+input[type="text"], 
+input[type="email"] {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.2rem;
+    border:1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px; /* evita zoom en celular */
+}
+
+/* BLOQUES */
+.bloque {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-left: 5px solid #4b6cb7;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.bloque h3 {
+    color: #4b6cb7;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* PREGUNTAS */
+.pregunta-card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* OPCIONES (🔥 AQUÍ MEJORÓ MUCHO EN CELULAR) */
+.opciones {
+    display: flex;
+    flex-wrap: wrap; /* 🔥 clave */
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f1f1f1;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* RESULTADOS */
+.resultado-principal {
+    background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+    border: 2px solid #4b6cb7;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.medalla {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.resultado-principal h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+/* GRID RESPONSIVO */
+.ranking-secundario {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.card-secundaria {
+    background: #fdfdfd;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* BOTÓN */
+.btn-reiniciar {
+    background-color: #2ecc71; 
+}
+
+.btn-reiniciar:hover {
+    background-color: #27ae60;
+}
+
+/* IMAGEN */
+.imagen-principal {
+    width: 100%;
+    max-width: 280px;
+    margin: 15px auto;
+}
+
+/* MENU */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    background: white;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: 0.4s;
+    z-index: 1500;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* MENU */
+.menu {
+    margin-top: 20px;
+}
+
+.dropdown {
+    margin-bottom: 15px;
+}
+
+.dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    padding: 8px 0;
+}
+
+/* LINKS */
+.dropdown-content {
+    display: none;
+    padding-left: 10px;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.menu-inicio {
+    display: block;
+    padding: 8px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+/* 📱 TABLET */
+@media (min-width: 768px) {
+    .ranking-secundario {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        margin-top: 120px;
+    }
+}
+
+/* 💻 DESKTOP */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 700px;
+    }
+}

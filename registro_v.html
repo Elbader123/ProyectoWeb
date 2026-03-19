@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VocatiTest - Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estiloss.css">
+</head>
+<body>
+
+<header class="hero-section">
+    <div class="header-container">
+        <div class="header-text">
+            <h1>Instituto Tecnológico de Minatitlán</h1>
+            <p>Ingresa tus datos para realizar el test vocacional</p>
+        </div>
+        <div class="header-image">
+            <img src="images/logo1.png" alt="Registro VocatiTest">
+        </div>
+    </div>
+</header>
+
+<main>
+    <form id="registroForm" method="POST" action="">
+        <h2>Crea tu cuenta</h2>
+
+        <?php if ($mensaje != ""): ?>
+            <p class="mensaje-error"><?php echo $mensaje; ?></p>
+        <?php endif; ?>
+
+        <div class="input-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Ej. Juan Pérez Martínez" required>
+        </div>
+
+        <div class="input-group">
+            <label for="email">Correo Institucional</label>
+            <input type="email" name="email" id="email" placeholder="estudiante@minatitlan.tecnm.mx" required>
+        </div>
+
+        <!-- BOTONES LIMPIOS -->
+        <div class="grupo-botones">
+            <button type="submit">COMENZAR EL TEST</button>
+
+            <button type="button" onclick="window.location.href='cuenta.html'">
+                YA TENGO CUENTA
+            </button>
+
+            <button type="button" class="boton-volver" onclick="window.location.href='index.html'">
+                &larr; Volver al Inicio
+            </button>
+        </div>
+
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2026 VocatiTest - Instituto Tecnológico de Minatitlán</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+/* =========================================
+   Configuración General y Tipografía
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background: url("images/fondo4.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f0f4f8; /* Fallback */
+    color: #334e68;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================================
+   Contenedores Principales
+   ========================================= */
+.container {
+    width: 95%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2.5rem;
+    margin: 140px 0 5rem 0;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+h1 { 
+    color: #002147; 
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+p { 
+    color: #627d98; 
+    margin-bottom: 2rem; 
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   Botones (Estilo Gradiente Azul)
+   ========================================= */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+    color: white !important;
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 71, 171, 0.2);
+}
+
+.btn:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+    filter: brightness(1.1);
+}
+
+.btn-reiniciar {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+/* =========================================
+   Estructura de Encuesta y Bloques
+   ========================================= */
+.bloque {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 6px solid #00d4ff;
+    background: #f8fafc;
+    border-radius: 0 12px 12px 0;
+    text-align: left;
+}
+
+.bloque h3 {
+    color: #0047ab;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.pregunta-card {
+    background: white;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    border: 1px solid #e1effe;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e1effe;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #00d4ff;
+}
+
+/* =========================================
+   Resultados y Ranking
+   ========================================= */
+.resultado-principal {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+    border: 2px solid #00d4ff;
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.1);
+}
+
+.card-secundaria {
+    background: white;
+    padding: 15px;
+    border: 1px solid #e1effe;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.card-secundaria:hover {
+    border-color: #00d4ff;
+    transform: scale(1.02);
+}
+
+/* =========================================
+   Sidebar y Navegación (Coherente)
+   ========================================= */
+.menu-toggle {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+    background-color: #0047ab;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: #002147; /* Fondo oscuro profesional */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1500;
+}
+
+.sidebar.active { left: 0; }
+
+.sidebar a, .dropbtn {
+    color: #e1effe;
+    padding: 12px 0;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+    background: none;
+    border-top: none; border-left: none; border-right: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar a:hover, .dropbtn:hover {
+    color: #00d4ff;
+    padding-left: 10px;
+}
+
+.dropdown-content a {
+    font-size: 14px;
+    color: #94a3b8;
+    padding-left: 20px;
+    border: none;
+}
+
+/* Imagen con Animación */
+.imagen-principal {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 20px;
+    animation: popEntrada 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popEntrada {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}

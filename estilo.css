@@ -1,0 +1,1099 @@
+/* =========================================
+   Configuración General y Tipografía
+   ========================================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #334e68;
+  margin: 0;
+  overflow-x: hidden; /* Evita scroll horizontal por el sidebar */
+}
+
+/* =========================================
+   Sección Hero (Usada en Objetivos.html)
+   ========================================= */
+.hero-section {
+  background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+  color: white;
+  padding: 80px 0;
+  margin-bottom: 40px;
+  border-bottom: 5px solid #00d4ff;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-size: 3.5rem;
+}
+
+.hero-section p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* =========================================
+   Tarjetas de Contenido (Info Cards)
+   ========================================= */
+.info-card {
+  background: white;
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+h3 {
+  color: #0047ab;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+h3::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 24px;
+  background: #00d4ff;
+  margin-right: 12px;
+  border-radius: 3px;
+}
+
+/* =========================================
+   Sidebar y Navegación
+   ========================================= */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    background-color: white;   /* 👈 fondo blanco */
+    color: black;              /* 👈 color del icono ☰ */
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    margin: 0; /* Elimina cualquier margen que pueda estar empujando */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-toggle:hover {
+  background: #00d4ff;
+  color: #002147;
+}
+
+/* Forzamos el color negro en el enlace de Inicio */
+.menu-inicio, 
+.menu-inicio:link, 
+.menu-inicio:visited, 
+.menu-inicio:active {
+    display: block;
+    padding-left: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000 !important; /* Negro absoluto */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* empieza oculto */
+    width: 260px;
+    height: 100vh;
+    background: white;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    transition: left 0.4s ease;
+    z-index: 2000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.logo-top {
+    width: 120px;
+    margin: 0 auto;
+}
+
+.logo-bottom {
+    width: 120px;
+    margin: 0 auto;
+}
+
+/* Solo cambia a azul cuando pasas el mouse por encima */
+.menu-inicio:hover {
+    color: #3498db !important;
+}
+
+/* Solo cambia a azul cuando pasas el mouse por encima */
+.dropbtn:hover {
+    color: #3498db !important;
+}
+/* Elimina el fondo gris de los submenús de Información y Más */
+.dropdown-content {
+    background-color: #ffffff !important; /* Fondo blanco puro */
+    border: none !important;
+    padding-left: 15px !important; /* Alineación para que se note la jerarquía */
+}
+
+.menu {
+    margin-top: 40px;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px 0;
+    font-weight: bold;
+    color: #000000 !important; /* Negro total */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #ffffff !important; 
+    padding-left: 20px; /* Indentación para jerarquía */
+    border-left: 2px solid #e1effe; /* Línea sutil de guía */
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 6px 0;
+    text-decoration: none;
+    color: #000000 !important; /* Negro total */
+
+}
+
+.dropdown-content a:hover {
+    color: #3498db !important;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+.menu-inicio {
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-inicio:hover {
+    color: #3498db;
+}
+/*FIN MENU*/
+.sidebar a, .dropbtn {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #e1effe;
+  display: block;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.sidebar a:hover, .dropbtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #00d4ff;
+  padding-left: 35px;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-left: 20px;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* =========================================
+   Página de Bienvenida (index.html)
+   ========================================= */
+.container-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.imagen-principal {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 50px rgba(0, 71, 171, 0.15);
+}
+
+.btn-entrar {
+  background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+  color: white !important;
+  padding: 16px 60px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  margin-top: 25px;
+  box-shadow: 0 10px 20px rgba(0, 71, 171, 0.2);
+}
+
+.btn-entrar:hover {
+  transform: translateY(-3px);
+  border-color: #00d4ff;
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+}
+
+/* =========================================
+   Utilidades y Footer
+   ========================================= */
+.badge-blue {
+  background-color: #e1effe;
+  color: #0047ab;
+  font-weight: bold;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 30px;
+  text-align: center;
+  color: #627d98;
+  font-size: 0.9rem;
+  border-top: 1px solid #e1effe;
+}
+
+
+/* =========================================
+   Específicos para Carreras
+   ========================================= */
+
+.career-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e1effe; /* Borde sutil para definir la tarjeta */
+}
+
+.career-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.career-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #627d98;
+    margin-bottom: 25px;
+}
+
+.career-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px inset #f0f4f8;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: #0047ab;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #00d4ff;
+}
+
+/* Ajuste para que las tarjetas pesen lo mismo visualmente */
+.row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    margin-bottom: 20px;
+}
+
+/* Contenedor de imagen que se ajusta a la tarjeta */
+.card-img-container {
+    position: relative;
+    width: calc(100% + 60px); /* Para compensar el padding de 30px de .info-card */
+    margin: -30px -30px 20px -30px; /* Sube la imagen y la pega a los bordes */
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* El icono ahora flota sobre la foto */
+.career-overlay-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Efecto hover en la imagen */
+.info-card:hover .card-img-container img {
+    transform: scale(1.1);
+}
+
+/* Ajuste para el contenido */
+.career-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+
+/*=========================================
+   PDF DE LAS CARRERAS
+   ========================================= */
+/* Estilos para el Modal del PDF */
+/* Contenedor principal del Modal */
+.modal-pdf {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 33, 71, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+/* Caja blanca que contiene el PDF */
+.modal-content-pdf {
+    background-color: white;
+    margin: 2vh auto; /* 2% de la altura de la pantalla */
+    width: 90%;
+    max-width: 1000px;
+    height: 95vh; /* Ocupa casi toda la pantalla */
+    border-radius: 15px;
+    overflow: hidden; /* Para que el PDF no se salga de las esquinas redondeadas */
+    display: flex;
+    flex-direction: column; /* Alinea la barra de cerrar y el PDF */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Barra superior interna donde va el botón */
+.modal-header-pdf {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Estilo del botón de cerrar corregido */
+.close-pdf {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: sans-serif;
+}
+
+.close-pdf:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+
+
+/* =========================================
+   Sección Hero (Usada en Objetivos.html)
+   ========================================= */
+   /* Estilos específicos para la página de Registro */
+/* =========================================
+   Configuración General y Tipografía
+   ========================================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #334e68;
+  margin: 0;
+  overflow-x: hidden; /* Evita scroll horizontal por el sidebar */
+}
+
+/* =========================================
+   Sección Hero (Usada en Objetivos.html)
+   ========================================= */
+.hero-section {
+  background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+  color: white;
+  padding: 80px 0;
+  margin-bottom: 40px;
+  border-bottom: 5px solid #00d4ff;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-size: 3.5rem;
+}
+
+.hero-section p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* =========================================
+   Tarjetas de Contenido (Info Cards)
+   ========================================= */
+.info-card {
+  background: white;
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+h3 {
+  color: #0047ab;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+h3::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 24px;
+  background: #00d4ff;
+  margin-right: 12px;
+  border-radius: 3px;
+}
+
+/* =========================================
+   Sidebar y Navegación
+   ========================================= */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    background-color: white;   /* 👈 fondo blanco */
+    color: black;              /* 👈 color del icono ☰ */
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    margin: 0; /* Elimina cualquier margen que pueda estar empujando */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-toggle:hover {
+  background: #00d4ff;
+  color: #002147;
+}
+
+/* Forzamos el color negro en el enlace de Inicio */
+.menu-inicio, 
+.menu-inicio:link, 
+.menu-inicio:visited, 
+.menu-inicio:active {
+    display: block;
+    padding-left: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000 !important; /* Negro absoluto */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* empieza oculto */
+    width: 260px;
+    height: 100vh;
+    background: white;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    transition: left 0.4s ease;
+    z-index: 2000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.logo-top {
+    width: 120px;
+    margin: 0 auto;
+}
+
+.logo-bottom {
+    width: 120px;
+    margin: 0 auto;
+}
+
+/* Solo cambia a azul cuando pasas el mouse por encima */
+.menu-inicio:hover {
+    color: #3498db !important;
+}
+
+/* Solo cambia a azul cuando pasas el mouse por encima */
+.dropbtn:hover {
+    color: #3498db !important;
+}
+/* Elimina el fondo gris de los submenús de Información y Más */
+.dropdown-content {
+    background-color: #ffffff !important; /* Fondo blanco puro */
+    border: none !important;
+    padding-left: 15px !important; /* Alineación para que se note la jerarquía */
+}
+
+.menu {
+    margin-top: 40px;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px 0;
+    font-weight: bold;
+    color: #000000 !important; /* Negro total */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #ffffff !important; 
+    padding-left: 20px; /* Indentación para jerarquía */
+    border-left: 2px solid #e1effe; /* Línea sutil de guía */
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 6px 0;
+    text-decoration: none;
+    color: #000000 !important; /* Negro total */
+
+}
+
+.dropdown-content a:hover {
+    color: #3498db !important;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+.menu-inicio {
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-inicio:hover {
+    color: #3498db;
+}
+/*FIN MENU*/
+.sidebar a, .dropbtn {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #e1effe;
+  display: block;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.sidebar a:hover, .dropbtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #00d4ff;
+  padding-left: 35px;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-left: 20px;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* =========================================
+   Página de Bienvenida (index.html)
+   ========================================= */
+.container-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.imagen-principal {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 50px rgba(0, 71, 171, 0.15);
+}
+
+.btn-entrar {
+  background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+  color: white !important;
+  padding: 16px 60px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  margin-top: 25px;
+  box-shadow: 0 10px 20px rgba(0, 71, 171, 0.2);
+}
+
+.btn-entrar:hover {
+  transform: translateY(-3px);
+  border-color: #00d4ff;
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+}
+
+/* =========================================
+   Utilidades y Footer
+   ========================================= */
+.badge-blue {
+  background-color: #e1effe;
+  color: #0047ab;
+  font-weight: bold;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 30px;
+  text-align: center;
+  color: #627d98;
+  font-size: 0.9rem;
+  border-top: 1px solid #e1effe;
+}
+
+
+/* =========================================
+   Específicos para Carreras
+   ========================================= */
+
+.career-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e1effe; /* Borde sutil para definir la tarjeta */
+}
+
+.career-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.career-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #627d98;
+    margin-bottom: 25px;
+}
+
+.career-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px inset #f0f4f8;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: #0047ab;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #00d4ff;
+}
+
+/* Ajuste para que las tarjetas pesen lo mismo visualmente */
+.row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    margin-bottom: 20px;
+}
+
+/* Contenedor de imagen que se ajusta a la tarjeta */
+.card-img-container {
+    position: relative;
+    width: calc(100% + 60px); /* Para compensar el padding de 30px de .info-card */
+    margin: -30px -30px 20px -30px; /* Sube la imagen y la pega a los bordes */
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* El icono ahora flota sobre la foto */
+.career-overlay-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Efecto hover en la imagen */
+.info-card:hover .card-img-container img {
+    transform: scale(1.1);
+}
+
+/* Ajuste para el contenido */
+.career-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+
+/*=========================================
+   PDF DE LAS CARRERAS
+   ========================================= */
+/* Estilos para el Modal del PDF */
+/* Contenedor principal del Modal */
+.modal-pdf {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 33, 71, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+/* Caja blanca que contiene el PDF */
+.modal-content-pdf {
+    background-color: white;
+    margin: 2vh auto; /* 2% de la altura de la pantalla */
+    width: 90%;
+    max-width: 1000px;
+    height: 95vh; /* Ocupa casi toda la pantalla */
+    border-radius: 15px;
+    overflow: hidden; /* Para que el PDF no se salga de las esquinas redondeadas */
+    display: flex;
+    flex-direction: column; /* Alinea la barra de cerrar y el PDF */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Barra superior interna donde va el botón */
+.modal-header-pdf {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Estilo del botón de cerrar corregido */
+.close-pdf {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: sans-serif;
+}
+
+.close-pdf:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+
+
+/* =========================================
+   Sección Hero (Usada en Objetivos.html)
+   ========================================= */
+   /* Estilos específicos para la página de Registro */
+.body-registro {
+    /* Aquí pones la ruta de tu imagen de galaxia */
+    background: url('tu-imagen-galaxia.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.card-registro {
+    background: rgba(255, 255, 255, 0.95); /* Blanco con ligera transparencia */
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.card-registro h1 {
+    color: #334e68;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.card-registro p {
+    color: #627d98;
+    margin-bottom: 30px;
+}
+
+/* Inputs estilizados */
+.card-registro input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #e1effe;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box; /* Importante para que el padding no desborde */
+    transition: 0.3s;
+}
+
+.card-registro input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Botón Iniciar Test */
+.btn-submit {
+    background: #4facfe; /* Azul brillante como en tu imagen */
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 0; /* Cambia esto a 0 si tenía algún valor */
+    border-bottom: none; /* Si tenías un borde celeste, quítalo para probar */
+}
+
+.hero-section h1 {
+    margin: 0; /* Evita que el margen del h1 cree espacios extra */
+    padding-bottom: 10px;
+}
+
+.container-registro {
+    background-color: #ffffff; 
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
+    padding-top: 40px; /* Usa padding para dar espacio, no margin */
+}
+
+.container-registro {
+    margin-top: -1px; /* Sube la sección 1px para cubrir cualquier rendija */
+    position: relative;
+    z-index: 5;
+}
+
+.card-registro label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0047ab;
+}
+
+.card-registro input {
+    width: 100%; /* Para que ocupen todo el ancho disponible */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block; /* Asegura que bajen a la siguiente línea */
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0047ab 0%, #002147 100%);
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 0; /* Cambia esto a 0 si tenía algún valor */
+    border-bottom: none; /* Si tenías un borde celeste, quítalo para probar */
+}
+
+.hero-section h1 {
+    margin: 0; /* Evita que el margen del h1 cree espacios extra */
+    padding-bottom: 10px;
+}
+
+.container-registro {
+    background-color: #ffffff; 
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
+    padding-top: 40px; /* Usa padding para dar espacio, no margin */
+}
+
+.container-registro {
+    background-color: #ffffff; 
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
+    padding-top: 40px; /* Usa padding para dar espacio, no margin */
+}
+
+.card-registro label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0047ab;
+}
+
+.card-registro input {
+    width: 100%; /* Para que ocupen todo el ancho disponible */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block; /* Asegura que bajen a la siguiente línea */
+}

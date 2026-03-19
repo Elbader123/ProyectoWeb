@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VocatiTest - Cuestionario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Botón para abrir menú -->
+<button class="menu-toggle" id="menuToggle">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+
+    <img src="images/logo1.png" class="logo-top" alt="Logo Superior">
+
+    <nav class="menu">
+         <a href="index.html" class="menu-inicio">Inicio</a>
+        <div class="dropdown">
+            <button class="dropbtn">Carreras</button>
+            <div class="dropdown-content">
+                <a href="#">Ingeniería</a>
+                <a href="#">Administración</a>
+                <a href="#">Ambiental</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Información</button>
+            <div class="dropdown-content">
+                <a href="#">¿Qué es VocatiTest?</a>
+                <a href="#">Cómo funciona</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Más</button>
+            <div class="dropdown-content">
+                <a href="#">Contacto</a>
+                <a href="#">Ayuda</a>
+            </div>
+        </div>
+    </nav>
+
+    <img src="images/logo2.png" class="logo-bottom" alt="Logo Inferior">
+
+</div>
+
+    <div class="container" style="max-width: 800px;">
+        <h1>Cuestionario Vocacional</h1>
+        <p>Responde con sinceridad. No hay respuestas correctas o incorrectas.</p>
+        <hr>
+
+        <form id="vocatiForm">
+            <div id="preguntasContainer"></div>
+            <button type="submit" class="btn">FINALIZAR Y VER RESULTADOS</button>
+        </form>
+    </div>
+
+    <script>
+        // Tus 50 preguntas
+        const preguntas = [
+            '¿Te gustaría aprender a organizar empresas y hacer que funcionen mejor?',
+            '¿Disfrutas resolver problemas y tomar decisiones importantes?',
+            '¿Te interesa crear tu propio negocio o mejorar uno existente?',
+            '¿Te gusta trabajar con números y calcular cosas para tomar decisiones?',
+            '¿Quieres ayudar a que una empresa crezca y tenga éxito de manera responsable y justa?',
+            '¿Te gusta aprender cómo funcionan las máquinas y los motores?',
+            '¿Disfrutas resolver problemas usando matemáticas y lógica?',
+            '¿Te interesa diseñar o mejorar sistemas mecánicos o eléctricos?',
+            '¿Te gustaría trabajar en proyectos que hagan más eficiente el uso de energía?',
+            '¿Te gustaría participar en proyectos que cuiden el medio ambiente mientras funcionan los sistemas electromecánicos?',
+            '¿Te gusta crear programas o aplicaciones para solucionar problemas de la vida real?',
+            '¿Disfrutas aprender a usar computadoras y tecnología para hacer tareas más fáciles o rápidas?',
+            '¿Te interesa diseñar y mejorar interfaces de software que otras personas puedan usar fácilmente?',
+            '¿Te gustaría trabajar en proyectos donde se usen redes, bases de datos o sistemas de comunicación?',
+            '¿Quieres aprender a usar herramientas y software para ayudar a empresas o personas a ser más eficientes?',
+            '¿Te interesa aprender cómo funcionan los equipos y sistemas electrónicos?',
+            '¿Disfrutas resolver problemas usando lógica, matemáticas y tecnología?',
+            '¿Te gustaría diseñar o mejorar sistemas de control y automatización en empresas o industrias?',
+            '¿Te atrae la idea de usar computadoras y software para simular y analizar sistemas electrónicos?',
+            '¿Quieres participar en proyectos que hagan más eficientes los procesos industriales cuidando el medio ambiente?',
+            '¿Te interesa aprender a cuidar y proteger el medio ambiente?',
+            '¿Te gustaría trabajar en proyectos que mejoren la calidad del agua, aire o suelo?',
+            '¿Te atrae la idea de diseñar sistemas para tratar residuos o desechos de manera segura y responsable?',
+            '¿Te interesa usar tecnología y computadoras para analizar problemas ambientales?',
+            '¿Quieres aprender a liderar equipos que busquen soluciones sostenibles para el medio ambiente?',
+            '¿Te interesa mejorar la forma en que se producen bienes y servicios para que sean más eficientes?',
+            '¿Te gustaría aprender a diseñar sistemas de trabajo que aumenten la productividad en empresas?',
+            '¿Te atrae la idea de implementar métodos para que los productos y servicios sean de mejor calidad?',
+            '¿Quieres aprender a administrar y optimizar recursos y procesos en empresas?',
+            '¿Te interesa liderar equipos de trabajo y coordinar proyectos en diferentes áreas de producción?',
+            '¿Te interesa aprender a diseñar y controlar procesos en industrias químicas de manera segura y sostenible?',
+            '¿Te gustaría trabajar en equipo para resolver problemas de ingeniería química y mejorar procesos industriales?',
+            '¿Quieres aprender a usar software y tecnología para optimizar procesos químicos?',
+            '¿Te interesa aplicar conocimientos de química, física y matemáticas para resolver problemas en la industria?',
+            '¿Te gustaría desarrollar proyectos de investigación para innovar procesos químicos y ambientales?',
+            '¿Te interesa aprender a organizar y dirigir empresas para que funcionen mejor?',
+            '¿Te gustaría crear negocios que sean sostenibles y ayuden a la sociedad?',
+            '¿Quieres aprender a leer y usar información económica y financiera para tomar decisiones?',
+            '¿Te interesa conocer las leyes que afectan a las empresas para hacerlas cumplir correctamente?',
+            '¿Te gustaría liderar equipos y coordinar proyectos en una empresa?',
+            '¿Te interesa aprender a crear programas que puedan “pensar” y tomar decisiones por sí mismos?',
+            '¿Quieres aprender a analizar datos para encontrar soluciones a problemas complejos?',
+            '¿Te gustaría diseñar algoritmos que ayuden a empresas o industrias a trabajar mejor?',
+            '¿Te interesa usar la tecnología para automatizar procesos y optimizar operaciones?',
+            '¿Quieres aplicar la inteligencia artificial para resolver problemas de forma ética y responsable?',
+            '¿Te interesa aprender a crear aplicaciones para celulares, computadoras o la web?',
+            '¿Quieres diseñar programas que ayuden a personas y empresas a resolver problemas?',
+            '¿Te gustaría aprender a manejar bases de datos para que la información se organice y use de manera eficiente?',
+            '¿Te interesa aplicar tecnología para mejorar servicios y experiencias de los usuarios?',
+            '¿Te interesa crear soluciones tecnológicas innovadoras con un enfoque ético y responsable?'
+        ];
+
+        const contenedor = document.getElementById('preguntasContainer');
+
+        // Generar preguntas dinámicamente
+        preguntas.forEach((texto, index) => {
+            const numero = index + 1;
+            const div = document.createElement('div');
+            div.className = 'pregunta-card';
+            div.innerHTML = `
+                <p>${numero}. ${texto}</p>
+                <div class="opciones">
+                    <label><input type="radio" name="p${numero}" value="true" required> Sí</label>
+                    <label><input type="radio" name="p${numero}" value="false"> No</label>
+                </div>
+            `;
+            contenedor.appendChild(div);
+        });
+
+        // Guardar respuestas
+        const form = document.getElementById('vocatiForm');
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            const respuestas = [];
+            preguntas.forEach((_, i)=>{
+                const name = 'p' + (i+1);
+                const checked = document.querySelector(`input[name="${name}"]:checked`);
+                respuestas.push(checked.value === 'true');
+            });
+            localStorage.setItem('respuestas', JSON.stringify(respuestas));
+            window.location.href = 'resultados.html';
+        });
+    </script>
+
+    <script>
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+});
+
+document.querySelectorAll(".dropbtn").forEach(button => {
+    button.addEventListener("click", function() {
+        this.parentElement.classList.toggle("active");
+    });
+});
+</script>
+</body>
+</html>

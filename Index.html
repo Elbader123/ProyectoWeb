@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VocatiTest - Bienvenida</title>
+
+    <!-- 🔥 IMPORTANTE PARA RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- BOTÓN MENÚ -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <img src="images/logo1.png" class="logo-top" alt="Logo Superior">
+
+        <nav class="menu">
+            <a href="index.html" class="menu-inicio">Inicio</a>
+
+            <div class="dropdown">
+                <a href="carreras.html" class="dropbtn" style="text-decoration: none;">Carreras</a>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Información ▾</button>
+                <div class="dropdown-content">
+                    <a href="Objetivos.html">¿Qué es VocatiTest?</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Más ▾</button>
+                <div class="dropdown-content">
+                    <a href="#">Contacto</a>
+                    <a href="#">Ayuda</a>
+                </div>
+            </div>
+        </nav>
+
+        <img src="images/logo2.png" class="logo-bottom" alt="Logo Inferior">
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+        <h1>Bienvenido a VocatiTest</h1>
+
+        <img src="images/vocacion.png" alt="Imagen vocacional" class="imagen-principal">
+
+        <p>Descubre tu verdadera vocación con nuestro test especializado de 50 preguntas.</p>
+
+        <a href="registro_v.html" class="btn btn-entrar">ENTRAR</a>
+    </main>
+
+    <!-- SCRIPT -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const sidebar = document.getElementById("sidebar");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".dropbtn").forEach(button => {
+            button.addEventListener("click", function() {
+                this.parentElement.classList.toggle("active");
+            });
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 VocatiTest - Instituto Tecnológico de Minatitlán</p>
+    </footer>
+
+</body>
+</html>

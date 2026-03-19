@@ -1,0 +1,168 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f4f7f8;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: #fff;
+}
+
+header h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    opacity: 0.9;
+}
+
+/* FORMULARIO */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #182848;
+}
+
+/* INPUTS */
+.input-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #182848;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4b6cb7;
+    box-shadow: 0 0 5px rgba(75,108,183,0.4);
+}
+
+/* BOTONES GENERALES */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #4b6cb7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #182848;
+}
+
+/* 🔥 CONTENEDOR DE BOTONES (SOLUCIÓN DEFINITIVA) */
+.grupo-botones {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/* separación REAL entre botones */
+.grupo-botones button {
+    margin-top: 15px;
+}
+
+/* quitar espacio al primero */
+.grupo-botones button:first-child {
+    margin-top: 0;
+}
+
+/* BOTÓN LOGIN */
+.boton-login {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.boton-login:hover {
+    background-color: #bdbdbd;
+    color: #fff;
+}
+
+/* BOTÓN VOLVER */
+.boton-volver {
+    background-color: #f3f4f6;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.boton-volver:hover {
+    background-color: #e5e7eb;
+}
+
+/* IMÁGENES */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #182848;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 15px;
+    }
+
+    form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+    }
+}
